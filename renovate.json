@@ -1,0 +1,30 @@
+{
+  "extends": ["config:base"],
+  "prCreation": "immediate",
+  "updateLockFiles": true,
+  "rangeStrategy":"bump",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
+  "packageRules": [
+    {
+      "packagePatterns": ["jest"],
+      "groupName": "jest packages",
+      "dependencyDashboardAutoclose":"true"
+    },
+    {
+      "packagePatterns": ["^apollo"],
+      "groupName": "apollo packages",
+      "dependencyDashboardAutoclose":"true"
+    },
+    {
+      "updateTypes": ["patch"],
+       "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    }
+  ]
+}
